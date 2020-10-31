@@ -56,7 +56,7 @@ function App() {
             </main>
             
             <footer class="app-footer">
-                <h4>${t('creatorName')}</h4>
+                <h4>&copy; ${t('creatorName')}</h4>
             </footer>
         </div>
     `;
