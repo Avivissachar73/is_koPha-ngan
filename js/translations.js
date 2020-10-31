@@ -1,7 +1,7 @@
 export default {
     appTitle: {
-        en: 'is Ko Pha-ngan',
-        he: 'האם קופנגן'
+        en: 'is Ko_Pha-ngan',
+        he: 'האם_קופנגן'
     },
     creatorName: {
         en: 'Aviv Issachar',
