@@ -4,7 +4,6 @@ const API_KEY = 'AIzaSyAi-uHpQRtH4d8Uc3FfTX0MmEfeDuRySWY';
 export async function getIsKophangan() {
     const pos = await _getCoords();
     const res = await fetch(_buildApi(pos)).then(res => res.json());
-    console.log(res);
     if (res.status === 'REQUEST_DENIED') throw new Error('Error 404, Api request denied');
     return res.results.find(currRes => {
         return currRes.address_components.find(curr => curr.long_name.toLowerCase().includes('ko pha-ngan'));
