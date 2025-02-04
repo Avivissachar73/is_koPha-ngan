@@ -1,5 +1,6 @@
 // const API_KEY = 'AIzaSyClJEGatJZ5nsl0wqdDZ3KLGNHKVUsY9WA';
-const API_KEY = 'AIzaSyAi-uHpQRtH4d8Uc3FfTX0MmEfeDuRySWY';
+// const API_KEY = 'AIzaSyAi-uHpQRtH4d8Uc3FfTX0MmEfeDuRySWY';
+const API_KEY = 'AIzaSyAOosApgfyr-1IHme3iyQGaisd2uSAtjFY'; // issacharaviv gmail;
 
 export async function getIsKophangan() {
     const pos = await _getCoords();
