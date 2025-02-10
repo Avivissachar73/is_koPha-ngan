@@ -5,9 +5,11 @@ const API_KEY = 'AIzaSyAOosApgfyr-1IHme3iyQGaisd2uSAtjFY'; // issacharaviv gmail
 export async function getIsKophangan() {
     const pos = await _getCoords();
     const res = await fetch(_buildApi(pos)).then(res => res.json());
+    // console.log(res);
     if (res.status === 'REQUEST_DENIED') throw new Error('Error 404, Api request denied');
     return res.results.find(currRes => {
-        return currRes.address_components.find(curr => curr.long_name.toLowerCase().includes('ko pha-ngan'));
+        return currRes.address_components.find(curr => curr.long_name.toLowerCase().includes('ko pha-ngan')) ||
+               currRes.formatted_address?.toLowerCase().includes('ko pha-ngan');
     }) || false;
 
 }
@@ -17,6 +19,7 @@ function _buildApi(pos) {
 }
 
 function _getCoords() {
+    // return { lat: 9.7669980, lng: 99.9616540 }; // beni coords in ko pha-ngan
     // return Promise.resolve({lat: 9.7577800, lng: 100.0291400});
     return new Promise((resolve, reject) => {
         navigator.geolocation.getCurrentPosition((position) => {
